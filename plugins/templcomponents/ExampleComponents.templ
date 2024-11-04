@@ -1,0 +1,37 @@
+package main
+
+import (
+  // "gopkg.in/ini.v1"
+  // "fmt"
+)
+
+templ AnotherUIComponent(name string, second string) {
+  <div class="AnotherUIComponent">
+     This is AnotherUIComponent.  Hello { name } and { second }
+  </div>
+}
+
+
+templ ExampleUIComponent(m map[string]interface{}) {
+  <div class="ExampleUIComponent">
+     @AnotherUIComponent(m["text"].(string), "Hello"); 
+  </div>
+}
+
+templ TextBlock16x8(text string) {
+  <div class="TextBlock16x8">
+    { text }
+  </div>
+
+}
+
+templ HeroBlock(m map[string]interface{}) {
+  <div class="HeroComponent">
+     @TextBlock16x8(m["Text"].(string));
+  </div>
+  <div class="Image">
+     <image>{ m["Image"].(string) }</image> 
+  </div>
+}
+
+

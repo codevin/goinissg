@@ -1,0 +1,24 @@
+package templates
+
+import (
+  // grssl.contentblocks
+  
+  "html/template"
+)
+
+
+
+
+templ Hello(name string) {
+  <div>First Template - Hello. Hello, { name }</div>
+}
+
+templ Greeting(person string, goTemplate *template.Template) {
+  <div class="greeting">
+    @Hello(person)
+  </div>
+   <p> From Go Template: </p>
+  <div>
+    @templ.FromGoHTML(goTemplate, person) 
+  </div>
+}
